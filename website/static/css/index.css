@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+#video-container {
+  display: none;
+  max-width: 840px;
+  width: 840px;
+  text-align: left;
+}
+
+#video-container * {
+  color: #e62b1e;
+}
+
+#video-header {
+  max-width: 600px;
+  text-align: left;
+}
+
+#video-header a {
+  font-size: initial;
+}
+
+#search-keys {
+  color: #fff;
+}
+
+#search-info {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #991a11b7;
+  outline: black;
+  text-shadow: rgba(0,0,0, 0.5);
+}
+
+#title-container {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.search-form .input-group .form-group {
+    width: 760px;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+.input-group input[type='text'] {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.input-group-btn {
+  width: 55px !important;
+}
+
+#n-btn-select {
+  height: 40px !important;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #EAE9E9;
+  border-left: 0;
+}
+
+.carousel-control {
+  background: transparent !important;
+}
+
+.search-btn, .toggle-btn{
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+#help-btn {
+  font-size: 18px;
+  color: buttonface;
+}
+
+.carousel-control > i {
+  margin-top: -15px;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+}
+
+.slider-area{
+  width: 100%;
+  height: 100%;
+  
+  bottom: 0;
+}
+
+.slider-area .black-view{
+  background-color: rgba(0,0,0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.popover {
+  color: initial !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: initial;
+  text-align: justify !important;
+}

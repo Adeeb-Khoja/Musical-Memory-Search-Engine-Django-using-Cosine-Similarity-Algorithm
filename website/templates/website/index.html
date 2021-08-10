@@ -1,0 +1,94 @@
+{% extends "website/base.html" %}
+{% block title %} Home Page {% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/index.css' %}?version=1.1">
+<div class="slider-area"  style="background-image: url('/static/img/bg.jpg');
+                                   background-size: cover; 
+                                   background-repeat: no-repeat;
+                                   background-position: center center;
+                                   height: 100vh;">
+  <div class="black-view">
+    <div class="slider-content">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+          <div id="presentation-header">
+            <h2>
+              Musical Memory Engine
+              <a id="help-btn" href="#help" tabindex="0" data-toggle="popover" data-placement="right" data-trigger="focus" role="button"
+              data-title="Musical Memory Engine"
+              data-content="This Engine can be used to search for songs using normal words that occur many times">
+              <i class="fa fa-question-circle"></i>
+              </a>
+            </h2>
+          </div>
+          <div class="search-form wow pulse" data-wow-delay="0.8s">
+            <form id="search-form" class="form-inline" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                  <div class="input-group col-md-12">
+                    <input type="text" name="keyword" class="form-control" placeholder="Search for songs" required>
+                    <div class="input-group-btn">
+                      <button id="n-btn-select" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        1
+                      </button>
+                      <ul id="select-min-videos" class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#list-1" data-video="1">1</a></li>
+                        <li><a href="#list-2" data-video="2">2</a></li>
+                        <li><a href="#list-3" data-video="3">3</a></li>
+                        <li><a href="#list-4" data-video="4">4</a></li>
+                        <li><a href="#list-5" data-video="5">5</a></li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-group hidden">
+                <select name="min-videos" class="form-control">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <span>Search using words that you remember from a song</span>
+          </div>
+          <div id="video-container">
+            <h4 id="search-info">List of Songs:&nbsp;<span
+              style="color: #fff;" id="search-keys"></span>
+              <a id="close-video-btn" href="#close-video">
+                <span class="fa fa-times pull-right text-danger"></span>
+              </a>
+            </h4>
+            <center>
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% include "website/wait_modal.html" %}
+<script src="{% static 'js/index.js' %}?version=1.1"></script>
+{% endblock %}
